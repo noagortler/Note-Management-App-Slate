@@ -5,7 +5,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // middleware
@@ -53,7 +53,7 @@ mongoose
     console.log("Connected to MongoDB");
 
     app.listen(PORT, () => {
-      console.log(`Slate is running on http://localhost:${PORT}`);
+      console.log(`Slate is running on ${PORT}`);
     });
   })
 
